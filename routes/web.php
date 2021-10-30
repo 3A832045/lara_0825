@@ -17,7 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
+Route::get('index',[\App\Http\Controllers\PostsController::class, 'index']);
+Route::get('post',[\App\Http\Controllers\PostsController::class, 'post']);
+Route::get('contact',[\App\Http\Controllers\PostsController::class, 'contact']);
+Route::get('about',[\App\Http\Controllers\PostsController::class, 'about']);
+
+/*Route::get('/index', function () {
     return view('index');
 });
 
@@ -31,4 +36,6 @@ Route::get('/contact', function () {
 
 Route::get('/about', function () {
     return view('about');
-});
+});*/
+
+
