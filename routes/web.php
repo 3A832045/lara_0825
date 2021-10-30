@@ -24,3 +24,7 @@ Route::get('/index', function () {
 Route::get('/post', function () {
     return view('post');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
