@@ -1,4 +1,7 @@
+@extends('layouts.master')
+@section('title','Clean Blog-About')
 
+@section('content')
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('img/about-bg.jpg')">
     <div class="overlay"></div>
@@ -24,4 +27,4 @@
       </div>
     </div>
   </div>
-
+  @endsection
