@@ -23,9 +23,11 @@ Route::get('/', function () {
     Post::create([
         'title'=>'test title',
         'content'=>'test content',
-    ]);*/
+    ]);
     $posts=Post::all();
-    dd($posts);
+    dd($posts);*/
+    $post=Post::find(1);
+    dd($post);
 });
 
 Route::get('index',[\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
