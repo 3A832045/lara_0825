@@ -27,9 +27,14 @@ Route::get('/', function () {
     $posts=Post::all();
     dd($posts);
     $post=Post::find(1);
-    dd($post);*/
+    dd($post);
     $posts=Post::where('id','<',10)->orderBy('id','DESC')->get();
-    dd($posts);
+    dd($posts);*/
+    $post = Post::find(1);
+    $post->update([
+        'title'=>'updated title',
+        'content'=>'updated content',
+    ]);
 });
 
 Route::get('index',[\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
