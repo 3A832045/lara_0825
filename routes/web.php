@@ -19,11 +19,13 @@ Route::get('/', function () {
     /*$post = new Post();
     $post->title = 'test title';
     $post->content = 'test content';
-    $post->save();*/
+    $post->save();
     Post::create([
         'title'=>'test title',
         'content'=>'test content',
-    ]);
+    ]);*/
+    $posts=Post::all();
+    dd($posts);
 });
 
 Route::get('index',[\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
