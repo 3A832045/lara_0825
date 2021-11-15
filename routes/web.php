@@ -1,8 +1,9 @@
 <?php
 
 use App\Models\Post;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Models\Comment;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    //return view('welcome');
-    /*$post = new Post();
+    /*return view('welcome');
+    $post = new Post();
     $post->title = 'test title';
     $post->content = 'test content';
     $post->save();
@@ -49,10 +50,16 @@ Route::get('/', function () {
     dd($featuredPosts);
 
     $fourthPost=Post::find(4);
-    dd($fourthPost);*/
+    dd($fourthPost);
 
     $lastPost=Post::orderBy('id','DESC')->first();
-    dd($lastPost);
+    dd($lastPost);*/
+
+    $post=Post::find(6);
+    echo $post->title.'<br>';
+    foreach($post->comments as $comment){
+        echo $comment->content.'<br>';
+    }
 });
 
 Route::get('index',[\App\Http\Controllers\PostsController::class, 'index'])->name('posts.index');
